@@ -1,19 +1,15 @@
-module decoder_1_to_2(ena, in, out);
+`timescale 1ns/1ps
+`default_nettype none
 
-input wire ena;
-input wire in;
-output logic [1:0] out;
+module decoder_1_to_2(enable, a, c_0, c_1);
 
+input wire enable;
+input wire a;
+output logic c_0, c_1;
 
-logic in_bar;
 always_comb begin
-  out[1] = in & ena;
-  in_bar = ~ in;
-  out[0] = in_bar & ena;
+  c_0 = a & enable;
+  c_1 = ~a & enable;
 end
-
-// Alternate:
-// always_comb out[0] = ~in & ena;
-
 
 endmodule

@@ -22,8 +22,8 @@ generate
   genvar i;
   for(i = 0; i < N; i++) begin : ripple_carry
     adder_1 ADDER (
-      .a(a[i]),
-      .b(b[i]),
+      .in0(a[i]),
+      .in1(b[i]),
       .c_in(carries[i]),
       .sum(sum[i]),
       .c_out(carries[i+1])

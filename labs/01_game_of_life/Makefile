@@ -9,6 +9,7 @@ VIVADO=vivado -mode batch -source
 
 CONWAY_SRCS=hdl/conway_cell.sv hdl/adder_1.sv hdl/adder_n.sv
 DECODER_SRCS=hdl/decoder*.sv
+ADDER_SRCS=hdl/adder_1.sv
 LED_ARRAY_SRCS=${DECODER_SRCS} hdl/led_array_driver.sv
 MAIN_SRCS=${CONWAY_SRCS} ${LED_ARRAY_SRCS} hdl/main.sv 
 
@@ -18,8 +19,14 @@ MAIN_SRCS=${CONWAY_SRCS} ${LED_ARRAY_SRCS} hdl/main.sv
 test_decoder_1_2: tests/test_decoder_1_2.sv ${DECODER_SRCS}
 	${IVERILOG} $^ -o test_decoder_1_2.bin && ${VVP} test_decoder_1_2.bin ${VVP_POST}
 
+test_decoder_3_8: tests/test_decoder_3_8.sv ${DECODER_SRCS}
+	${IVERILOG} $^ -o test_decoder_3_8.bin && ${VVP} test_decoder_3_8.bin ${VVP_POST}
+
 test_decoders: tests/test_decoders.sv ${DECODER_SRCS}
 	${IVERILOG} $^ -o test_decoders.bin && ${VVP} test_decoders.bin ${VVP_POST}
+
+test_adder_1: tests/test_adder_1.sv ${ADDER_SRCS}
+	${IVERILOG} $^ -o test_adder_1.bin && ${VVP} test_adder_1.bin ${VVP_POST}
 
 test_conway_cell: tests/test_conway_cell.sv ${CONWAY_SRCS}
 	${IVERILOG} $^ -o test_conway_cell.bin && ${VVP} test_conway_cell.bin ${VVP_POST}
