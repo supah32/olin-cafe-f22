@@ -29,6 +29,6 @@ initial begin
 end
 
 wire [N-1:0] x_decoded;
-decoder_3_to_8 COL_DECODER(ena, x, x_decoded);
+decoder_3_to_8 COL_DECODER(.enable(ena), .in(x), .out(x_decoded));
 
 endmodule

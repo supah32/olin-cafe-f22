@@ -1,3 +1,6 @@
+# Extra Information about Lab 1 Submission
+This Lab submission includes our circuit diagrams and additional information within the docs folder. Also, our `led_array_driver.sv` file is the same as the file given to us. The rest of this `README` is the same as default.
+
 # Conway's Game of Life
 In this lab you will implement a version of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 

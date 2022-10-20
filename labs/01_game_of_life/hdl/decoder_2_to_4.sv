@@ -9,21 +9,24 @@ wire ena0, ena1;
 // wire [1:0] decoder_enables;
 
 decoder_1_to_2 DEC0(
-  .ena(ena0),
-  .in(in[0]),
-  .out(out[1:0])
+  .enable(ena0),
+  .a(in[0]),
+  .c_0(out[1]),
+  .c_1(out[0])
 );
 
 decoder_1_to_2 DEC1(
-  .ena(ena1),
-  .in(in[0]),
-  .out(out[3:2])
+  .enable(ena1),
+  .a(in[0]),
+  .c_0(out[3]),
+  .c_1(out[2])
 );
 
 decoder_1_to_2 DEC_ENA(
-  .ena(ena),
-  .in(in[1]),
-  .out({ena1, ena0})
+  .enable(ena),
+  .a(in[1]),
+  .c_0(ena1),
+  .c_1(ena0)
 );
 
 endmodule
