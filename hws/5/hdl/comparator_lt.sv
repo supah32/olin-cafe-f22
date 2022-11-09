@@ -7,7 +7,13 @@ output logic out;
 // Note: this assumes that the two inputs are signed: aka should be interpreted as two's complement.
 
 // Copy any other modules you use into the HDL folder and update the Makefile accordingly.
-
+adder_n #(.N(N)) subtractor(
+  .a(a),
+  .b(~b),
+  .c_in(1),
+  .sum(),
+  .c_out()
+);
 
 endmodule
 
