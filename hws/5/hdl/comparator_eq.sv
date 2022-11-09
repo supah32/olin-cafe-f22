@@ -5,8 +5,12 @@ output logic eq;
 // Using only *structural* combinational logic, make a module that computes if a == b. 
 
 // Copy any other modules you use into the HDL folder and update the Makefile accordingly.
-//? does this work 
-always_comb eq = &~(a ^ b);
+always_comb begin
+  // behavioural: high level
+  out = (a == b);
+
+  
+end
 
 endmodule
 
