@@ -68,7 +68,7 @@ alu_behavioural ALU (
   .control(alu_control),
   .overflow(overflow), .zero(zero), .equal(equal)
 );
-
+// always_comb alu_control = ALU_ADD
 // Implement your multicycle rv32i CPU here!
 
 endmodule
